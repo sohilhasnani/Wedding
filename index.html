@@ -135,8 +135,7 @@
             </a>
         </div>
     </header>
-
-    <!-- Quote Section -->
+  <!-- Quote Section -->
     <section id="quote" class="py-32 px-6 text-center relative overflow-hidden">
         <div class="max-w-4xl mx-auto" data-aos="fade-up">
             <div class="mb-12">
@@ -210,8 +209,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Events Section -->
+<!-- Events Section -->
     <section id="events" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-20" data-aos="fade-up">
             <h2 class="text-6xl font-script text-yellow-600 mb-4">Occasions of Joy</h2>
@@ -287,7 +285,7 @@
                 <p class="text-base text-gray-300 leading-relaxed font-bold">Kapol Mahajan Wadi,<br>Jafrabad, Dist. Amreli</p>
             </div>
 
-            <div class="glass-card p-10 rounded-[3rem] text-center" data-aos="fade-up">
+<div class="glass-card p-10 rounded-[3rem] text-center" data-aos="fade-up">
                 <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 text-yellow-600">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
@@ -331,4 +329,95 @@
             <div class="text-center mb-20" data-aos="fade-up">
                 <h2 class="text-5xl font-script text-yellow-600 mb-4">Family & Blessings</h2>
                 <div class="h-[1px] w-20 bg-yellow-600 mx-auto"></div>
-       
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-yellow-600 uppercase tracking-[0.3em] text-xs font-bold mb-6">With Blessings Of</h4>
+                    <p class="text-xl font-serif text-slate-800 mb-2">Late Nurbanuben &<br>Late Ramjanali Hasnani</p>
+                    <p class="text-sm text-slate-400 italic">Always in our hearts</p>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-yellow-600 uppercase tracking-[0.3em] text-xs font-bold mb-6">Awaiting Family</h4>
+                    <p class="text-xl font-serif text-slate-800 mb-2">Mrs. Mehrunnisha &<br>Mr. Turabali Hasnani</p>
+                    <p class="text-sm text-slate-500">Jafrabad, Gujarat</p>
+                </div>
+
+                <div class="bg-slate-50 p-10 rounded-3xl border border-yellow-500/10 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-yellow-600 uppercase tracking-widest text-xs font-bold mb-6">With Best Compliments</h4>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li>Mr. Turabali Ramjanali Hasnani</li>
+                        <li>Mrs. Chhaya & Mr. Zahir Turabali Hasnani</li>
+                        <li>Mrs. Renisha & Mr. Zahid Turabali Hasnani</li>
+                        <li>Mr. Yasin Turabali Hasnani</li>
+                        <li class="pt-4 font-bold text-slate-800">Hasnani Family, Relatives & Friends</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Dark Footer -->
+    <footer class="py-20 bg-slate-900 text-center text-slate-400 text-xs tracking-widest uppercase relative overflow-hidden">
+        <div class="relative z-10">
+            <p class="font-script text-4xl text-yellow-500 mb-4 normal-case tracking-normal">Sajid & Nilam</p>
+            <p class="mb-2">Awaiting Hasnani Family</p>
+            <p>© 2026 Hasnani Family • Jafrabad</p>
+        </div>
+        <!-- Decorative subtle gradient -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Countdown Timer
+        const weddingDate = new Date("Jan 22, 2026 12:15:00").getTime();
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (document.getElementById("days")) {
+                document.getElementById("days").innerText = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+            }
+        };
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Create floating flowers background
+        const createFlower = () => {
+            const container = document.getElementById('flower-container');
+            if (!container) return;
+            const flower = document.createElement('div');
+            flower.className = 'floating-flower';
+            flower.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 0C10 0 12 5 15 5C18 5 20 2 20 5C20 8 15 10 10 10C5 10 0 8 0 5C0 2 2 5 5 5C8 5 10 0 10 0Z" /></svg>`;
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            flower.style.color = 'var(--gold)';
+            container.appendChild(flower);
+            
+            setTimeout(() => flower.remove(), 20000);
+        };
+        setInterval(createFlower, 3000);
+    </script>
+</body>
+</html>
+
+
+            
